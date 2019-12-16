@@ -452,12 +452,12 @@ namespace YamlDotNet.Core
             // The anchor and the tag can be in any order. This loop repeats at most twice.
             while (true)
             {
-                if (anchorName == null && current is Anchor anchor)
+                if (anchorName == null && current is Tokens.Anchor anchor)
                 {
                     anchorName = string.IsNullOrEmpty(anchor.Value) ? null : anchor.Value;
                     Skip();
                 }
-                else if (tagName == null && current is Tag tag)
+                else if (tagName == null && current is Tokens.Tag tag)
                 {
                     if (string.IsNullOrEmpty(tag.Handle))
                     {
